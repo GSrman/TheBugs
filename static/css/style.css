@@ -1,5 +1,5 @@
 /*  File: style.css
-	Author: G.J.H. Schuurman
+	Authors: G.J.H. Schuurman, David B. Poot
 	Date: 12/04/2022
 	Styles the layout of the webpage */
 
@@ -14,6 +14,15 @@ body {
 html {
 	overflow-x: hidden;
 	height: 100vh;
+}
+
+#fileInput {
+	margin-top: 7.5px;
+	margin-left: 20px;
+}
+
+input[type=file] {
+	font-size: 15px
 }
 
 .text {
@@ -154,35 +163,120 @@ input, label {
 	margin-right: 20px;
 }
 
+#collapseSidebar:hover {
+	filter: invert(.3);
+}
+
+#infobutton {
+	float: right;
+	margin-right: 20px;
+}
+
+#infobutton:hover{
+	filter: invert(.3);
+}
+
+table {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: auto;
+}
+
 tr {
 	height: 10px;
+	border-bottom: 2px solid white;
+}
+
+th {
+	text-align: left;
+	font-size: 25px;
+}
+
+tr:not(:first-child) th {
+	padding-top: 2em;
 }
 
 td {
-	border: 1px solid black;
+	/* border: 1px solid black; */
+	font-size: 20px;
+	padding: .5em 1em;
 }
 
-button {
+
+
+input[type=image]#collapseSidebar {
 	cursor: pointer;
+	-webkit-transition: transform 1s ease-in-out;
+  	transition: transform 1s ease-in-out;
+}
+
+.rot {
+	-ms-transform: rotate(-180deg);
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+.diff_word {
+	text-decoration: underline blue;
+	text-decoration-style: dotted;
+	text-underline-offset: 2px;
 }
 
 .red {
-	background-color: red;
 	color: red;
+	font-weight: bold;
 }
 
 .orange {
-	background-color: orange;
 	color: orange;
+	font-weight: bold;
 }
 
 .yellow {
-	background-color: yellow;
 	color: yellow;
+	font-weight: bold;
 }
 
 .mistake {
 	text-decoration: underline;
 	text-decoration-color: red;
 	text-decoration-thickness: 2px;
+}
+.legenda {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+    position: fixed;
+	display: block;
+	top: 10%;
+	left: 40%;
+    width: 20%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    border: 10px solid darkcyan;
+    z-index: 20;
+}
+
+.legenda h1 {
+	text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.lred {
+    background-color: red;
+}
+
+.lorange {
+    background-color: orange;
+}
+
+.lyellow {
+    background-color: yellow;
+}
+
+.closebutton {
+	float: right;
+	cursor: pointer;
 }
