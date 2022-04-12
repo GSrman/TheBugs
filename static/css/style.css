@@ -221,6 +221,18 @@ input[type=image]#collapseSidebar {
 	text-underline-offset: 2px;
 }
 
+.redbg {
+	background-color: red;
+}
+
+.orangebg {
+	background-color: orange;
+}
+
+.yellowbg {
+	background-color: yellow;
+}
+
 .red {
 	color: red;
 	font-weight: bold;
