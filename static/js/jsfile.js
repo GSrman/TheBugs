@@ -1,5 +1,5 @@
 /*  File: jsfile.js
-	Author: G.J.H. Schuurman
+	Author: G.J.H. Schuurman, David B. Poot
 	Date: 12/04/2022
 	Its main function is to send and receive data to/from process.py
 	using ajax. Also contains several other functions for usability 
@@ -49,7 +49,7 @@ function ajaxCall(indata, refresh){
 			if (refresh) {
 				document.getElementById('successAlert').value = data.out;
 			}
-			$('#background').html(data.html_text.replace(/\n/g, "<br />").replace(/en/g, "<span class='mistake'>en</span>").replace(/on/g, "<span class='orange' title='hallo'>on</span>")+' ');
+			$('#background').html(data.html_text.replace(/\n/g, "<br />")+' ');
             $('#otherData').html("<table>" + data.other + "</table>");
         } else {
             $('#otherData').text('Oeps, het is niet gelukt de resultaten te berekenen!');
@@ -63,6 +63,9 @@ function collapseSidebar() {
 	el.classList.toggle("collapse");
 	var other_el = document.getElementById("text");
 	other_el.classList.toggle("openup");
+
+	// rotate arrow image
+	document.getElementById('collapseSidebar').classList.toggle("rot")
 }
 
 function saveText() {
@@ -79,4 +82,9 @@ function saveText() {
 	link.href = URL.createObjectURL(blob);
 	link.click();
 	URL.revokeObjectURL(link.href);
+}
+
+function toggleLegend(){
+    var el = document.getElementById("legenda");
+    el.classList.toggle("hidden");
 }

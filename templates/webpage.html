@@ -1,5 +1,5 @@
 <!--File: webpage.html
-	Author: G.J.H. Schuurman
+	Author: G.J.H. Schuurman, David B. Poot
 	Date: 12/04/2022
 	Structure of the webpage. Links to js file, jquery, and css file. -->
 
@@ -18,9 +18,18 @@
 		<h1 title="Nederlandse Tekst Beoordeler">NTB</h1>
         <input type="file" class="form-control" id="fileInput" onchange="loadFile()"  onclick="value = ''"/>
 		<button onclick="saveText()">Download bewerkt bestand</button>
-		<button id="collapseSidebar" onclick="collapseSidebar()">Resultatenbalk bedienen</button>
+        <input type="image" id="collapseSidebar" onclick="collapseSidebar()" class="rot" src="{{ url_for('static', filename='arrow-96-32.png')}}"/>
+        <input type="image" id="infobutton" onclick="toggleLegend()" src="{{ url_for('static', filename='info-3-32.png')}}">
     </div>
-	
+	<div id="legenda" class="legenda hidden">
+        <span class="closebutton" onclick="toggleLegend()">x</span>
+        <h1>Legenda</h1>
+        <p class="mistake">Mogelijke Spelfout</p>
+        <p class="diff_word">Moeilijk Woord</p>
+        <p class="lred">Erg slecht</p>
+        <p class="lorange">Slecht</p>
+        <p class="lyellow">Matig</p>
+    </div>
 	<div id="text" class="text">
 		<div id="background" class="lettering">upload een .txt bestand</div>
 	
