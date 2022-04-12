@@ -4,7 +4,6 @@
 # according to sentence length assigns a color,
 # creates dictionary, key is the sentence, value the color
 
-from re import S
 from readability import split_clean_sent
 import sys
 
@@ -45,8 +44,12 @@ def main():
     with open(sys.argv[1]) as infile:
         text_lst = infile.readlines()
 
-    dct_sent_len(text_lst)
-    dct_to_html(text_lst)
+    dct_color = dct_sent_len(text_lst)
+    lst_html = dct_to_html(text_lst)
+
+    print('Dictionary with sentences and a color \
+        according to their length:\n{0}'.format(dct_color))
+    print('List with sentences in html:\n{0}'.format(lst_html))
 
 
 if __name__ == "__main__":
