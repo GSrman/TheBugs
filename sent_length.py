@@ -29,27 +29,28 @@ def dct_sent_len(text_lst):
     return color_dct
 
 
-def dct_to_html(text_lst):
+def dct_to_html(text):
     '''
-    from text list (readlines()),
-    returns list with the sentences in an html span with a color
-    as class. (red, orange, yellow, white)
+    takes text incl whitelines replaces sent 
+    with html element span and class acc to color
     '''
-    dct = dct_sent_len(text_lst)
-    html_lst = ['<span class="'+dct[sent]+'">'+sent+'</span>' for sent in dct]
-    return html_lst
+    dct = dct_sent_len(text.split('\n'))
+    for sent in dct:
+        text.replace(sent, '<span class="'+dct[sent]+'">'+sent+'</span>')
+    return text
 
 
 def main():
     with open(sys.argv[1]) as infile:
         text_lst = infile.readlines()
+        text = infile.readlines()
 
     dct_color = dct_sent_len(text_lst)
-    lst_html = dct_to_html(text_lst)
+    html = dct_to_html(text_lst)
 
     print('Dictionary with sentences and a color \
         according to their length:\n{0}'.format(dct_color))
-    print('List with sentences in html:\n{0}'.format(lst_html))
+    print('Text containing span elements:\n{0}'.format(html))
 
 
 if __name__ == "__main__":

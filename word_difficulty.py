@@ -1,7 +1,6 @@
 # Author: M. Elzinga
 # Filename: word_difficulty
 # Date: 15.03.2022
-
 # Takes text file from terminal, outputs severals:
 # list with difficult words and their amount,
 # character count, paragraph count, indexes of double
@@ -44,9 +43,28 @@ def count_par(text):
 
 
 def find_non_capitals(text):
+    '''finds missing capitals at start of sentence, returns list'''
     text = ' '.join(text.split('\n'))
     end = re.compile('([a-zA-Z]+[a-zA-Z][.!?] [a-z])')
     return end.findall(text)
+
+
+def diff_words_html(text):
+    '''replaces diff_words with a span element with class diff_words'''
+    for word in find_difficult_words(text):
+        text = text.replace(word, '<span class="diff_word">'+word+'</span>')
+    return text
+
+
+def mistake_check_html(text):
+    '''replaces spell mistakes, non capitals and double spaces
+    with span element with class mistake
+    '''
+    for word in check_spelling(text):
+        text = text.replace(word, '<span class="mistake">'+word+'</span>')
+    for no_cap in find_non_capitals(text):
+        text = text.replace(no_cap, '<span class="mistake">'+no_cap+'</span>')
+    return text.replace('  ', '<span class="mistake">  </span>')
 
 
 def main():
