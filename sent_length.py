@@ -19,11 +19,11 @@ def dct_sent_len(text_lst):
     count_dct = {sent: len(sent.split(' ')) for sent in sent_lst}
     color_dct = {}
     for sent in sent_lst:
-        if count_dct[sent] > 45:
+        if count_dct[sent] > 30:
             color_dct[sent] = 'red'
-        elif count_dct[sent] > 35:
-            color_dct[sent] = 'orange'
         elif count_dct[sent] > 25:
+            color_dct[sent] = 'orange'
+        elif count_dct[sent] > 20:
             color_dct[sent] = 'yellow'
         else:
             color_dct[sent] = 'white'
