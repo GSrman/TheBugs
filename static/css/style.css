@@ -1,0 +1,188 @@
+/*  File: style.css
+	Author: G.J.H. Schuurman
+	Date: 12/04/2022
+	Styles the layout of the webpage */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+html {
+	overflow-x: hidden;
+	height: 100vh;
+}
+
+.text {
+	margin: 70px 10px 10px 10px;
+    width: calc(70% - 40px);
+    height: calc(100vh - 100px);
+    overflow-y: hidden;
+    padding: 10px;
+    float: left;
+	transition: 0.4s;
+	background-color: white;
+	position: fixed;
+}
+
+#background {
+	background-color: transparent;
+	height: calc(100vh - 100px);
+	width: calc(100% - 20px);
+	overflow-y: auto;
+	position: absolute;
+	font-family: monospace;
+	margin: 0;
+	color: white;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+textarea {
+    background-color: transparent;
+	border: none;
+	resize: none;
+	outline: none;
+	height: calc(100vh - 100px);
+	width: calc(100% - 20px);
+	position: absolute;
+	padding: 0;
+}
+
+#background::-webkit-scrollbar {
+	width: 8px;
+	background-color: white;
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(184, 185, 187);
+}
+
+textarea::-webkit-scrollbar-corner {
+    background-color: white;
+}
+
+.openup {
+	width: calc(100% - 40px);
+	transition: 0.6s;
+}
+
+.otherData {
+    right: 0;
+	position: absolute;
+    width: calc(30% - 20px);
+    margin: 60px 0 0;
+    padding: 10px;
+    height: calc(100vh - 80px);
+    background-color: darkcyan;
+    overflow-y: auto;
+	transition: 0.6s;
+	color: white;
+}
+
+.otherData::-webkit-scrollbar {
+    width: 8px;
+	height: 8px;
+    background-color: darkcyan;
+}
+
+.otherData::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 4px;
+}
+
+.otherData::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(184, 185, 187);
+}
+
+.collapse {
+	right: calc(30% * -1);
+	transition: 0.4s;
+}
+
+.lettering{
+	font-family: monospace;
+	text-rendering: auto;
+	text-indent: 0px;
+	font-size: 15px;
+	
+}
+
+#input {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background-color: darkcyan;
+    width: 100%;
+    height: 40px;
+    color: white;
+    border: 1px none black;
+    border-bottom-style: solid;
+	z-index: 5;
+}
+
+#input h1 {
+	float: left;
+	margin: 0 10px 0 0;
+	cursor: default;
+}
+
+input, label {
+    cursor: pointer;
+    width: auto;
+}
+
+#collapseSidebar {
+	float: right;
+	margin-right: 20px;
+}
+
+tr {
+	height: 10px;
+}
+
+td {
+	border: 1px solid black;
+}
+
+button {
+	cursor: pointer;
+}
+
+.red {
+	background-color: red;
+	color: red;
+}
+
+.orange {
+	background-color: orange;
+	color: orange;
+}
+
+.yellow {
+	background-color: yellow;
+	color: yellow;
+}
+
+.mistake {
+	text-decoration: underline;
+	text-decoration-color: red;
+	text-decoration-thickness: 2px;
+}

@@ -1,0 +1,31 @@
+<!--File: webpage.html
+	Author: G.J.H. Schuurman
+	Date: 12/04/2022
+	Structure of the webpage. Links to js file, jquery, and css file. -->
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nederlandse Tekst Beoordeler</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jsfile.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"></link>
+</head>
+<body onload="loadFile()">
+    <div id="input">
+		<h1 title="Nederlandse Tekst Beoordeler">NTB</h1>
+        <input type="file" class="form-control" id="fileInput" onchange="loadFile()"  onclick="value = ''"/>
+		<button onclick="saveText()">Download bewerkt bestand</button>
+		<button id="collapseSidebar" onclick="collapseSidebar()">Resultatenbalk bedienen</button>
+    </div>
+	
+	<div id="text" class="text">
+		<div id="background" class="lettering">upload een .txt bestand</div>
+	
+		<textarea id="successAlert" spellcheck="false" class="lettering" role="alert" oninput="ajaxCall(value, false)">upload een .txt bestand</textarea>
+	</div>
+    <div id="otherData" class="otherData"></div>
+</body>
+</html>
