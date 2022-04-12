@@ -7,7 +7,6 @@
 # character count, paragraph count, indexes of double
 # spaces and finds missing capitals at beginning of sentences
 
-import scipy as sp
 from wordfreq import *
 import sys
 import re
