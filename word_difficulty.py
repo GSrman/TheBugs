@@ -38,7 +38,7 @@ def count_char(text):
 
 def count_par(text):
     "takes text as str, returns int of amount of paragraphs"
-    par_lst = [item for item in text.split("\n") if "." in item]
+    par_lst = [item for item in text.split("\n\n") if "." in item]
     return len(par_lst)
 
 
