@@ -30,11 +30,23 @@ def dct_sent_len(text_lst):
     return color_dct
 
 
+def dct_to_html(text_lst):
+    '''
+    from text list (readlines()),
+    returns list with the sentences in an html span with a color
+    as class. (red, orange, yellow, white)
+    '''
+    dct = dct_sent_len(text_lst)
+    html_lst = ['<span class="'+dct[sent]+'">'+sent+'</span>' for sent in dct]
+    return html_lst
+
+
 def main():
     with open(sys.argv[1]) as infile:
         text_lst = infile.readlines()
 
-    print(dct_sent_len(text_lst))
+    dct_sent_len(text_lst)
+    dct_to_html(text_lst)
 
 
 if __name__ == "__main__":
