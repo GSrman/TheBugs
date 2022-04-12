@@ -22,6 +22,12 @@ def find_difficult_words(text):
     return [word for word in tok_lst if zipf_frequency(word, 'nl') <= 2]
 
 
+def check_spelling(text):
+    '''takes text as str, returns list with possible spelling mistakes'''
+    tok_lst = tokenize(text, 'nl')
+    return [word for word in tok_lst if zipf_frequency(word, 'nl') == 0]
+
+
 def find_spaces(text):
     '''takes text as str, return list with index of two spaces'''
     return [m.start() for m in re.finditer('  ', text)]
@@ -50,17 +56,22 @@ def main():
 
     diff_words = find_difficult_words(text)
     count_diff_words = len(diff_words)
-    
+    spelling_mistakes = check_spelling(text)
+
     spaces_index = find_spaces(text)
     char_count = count_char(text)
     par_count = count_par(text)
     no_capitals = find_non_capitals(text)
 
-    print("List with difficult words({0}):\n{1}".format(count_diff_words, diff_words))
+    print("List with difficult words({0}) \
+        :\n{1}".format(count_diff_words, diff_words))
     print("\nList with indexes for double spaces:\n{0}".format(spaces_index))
     print("\nCharacter count: {0}".format(char_count))
     print("Paragraph count: {0}".format(par_count))
-    print("\nIs there perhaps a capital missing here?\n{0}".format(no_capitals))
+    print("\nIs there perhaps a capital \
+        missing here?\n{0}".format(no_capitals))
+    print("\nThese words possibly \
+        contain a spelling mistake:\n{0}".format(spelling_mistakes))
 
 
 if __name__ == '__main__':
