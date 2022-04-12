@@ -23,7 +23,7 @@ def find_difficult_words(text):
 def check_spelling(text):
     '''takes text as str, returns list with possible spelling mistakes'''
     tok_lst = tokenize(text, 'nl')
-    return [word for word in tok_lst if zipf_frequency(word, 'nl') == 0]
+    return [word for word in tok_lst if (zipf_frequency(word, 'nl') == 0 and "span" not in word and "diff_word" not in word)]
 
 
 def find_spaces(text):
