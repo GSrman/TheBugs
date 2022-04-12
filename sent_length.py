@@ -31,7 +31,7 @@ def dct_sent_len(text_lst):
 
 def dct_to_html(text):
     '''
-    takes text incl whitelines replaces sent 
+    takes text incl whitelines replaces sent
     with html element span and class acc to color
     '''
     dct = dct_sent_len(text.split('\n'))
