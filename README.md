@@ -19,6 +19,8 @@ Our program is specifically designed for the dutch language.
 - [nltk](https://www.nltk.org/)
 - [wordfreq](https://github.com/rspeer/wordfreq)
 - [flask](https://flask.palletsprojects.com/)
+- [jquery](https://jquery.com/)
+
 
 ## Setup
 
