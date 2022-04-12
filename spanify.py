@@ -1,9 +1,14 @@
-#
-#
-#
-#
+# File: spanify.py
+# Author: David B. Poot
+# Date: 12/04/22
+# Description: custom module that adds a span with a class
+# based on values to an element and returns it again.
 
 def add_span(dataname, data):
+    """takes dataname as string and its value as number, then 
+    based on the dictionary returns the data in a span with a 
+    given class for HTML.
+    """
     span_dict = {
         "par_rare_word": (10, 7, 4),
         "par_words": (100, 75, 50),
